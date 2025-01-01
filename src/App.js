@@ -152,7 +152,8 @@ export default function App() {
               type='radio'
               id='yes'
               name='privacyResponse'
-              value={formData.privacyResponse}
+              value="yes"
+              checked={formData.privacyResponse === 'yes'}
               onChange={handleChange}
               
             />
@@ -164,9 +165,10 @@ export default function App() {
               type='radio'
               id='no'
               name='privacyResponse'
-              value={formData.privacyResponse}
+              value="no"
+              checked= {formData.privacyResponse === 'no'}
               defaultChecked
-              onChange={handleChange}
+              onChange={(e)=>{if(e.target.value !=='no') handleChange}}
             />
             Hayır
           </label>
@@ -176,7 +178,8 @@ export default function App() {
               type='radio'
               id='absolutely'
               name='privacyResponse'
-              value={formData.privacyResponse}
+              value="absolutely"
+              checked={formData.privacyResponse === 'absolutely'}
               onChange={handleChange}
             />
             Kesinlikle
